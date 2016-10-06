@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>P0020.Create</title>
+</head>
+<body style="background-color:#e8fcfc">
+    P0020.Create | 新增
+    <hr />
+    <div style="background-color:#f6f6e5;">
+        <form action="/P0020/SubmitCreate" method="post">
+            編號 = <input type="text" id="txtMS1" name="ms1" value="" /> <span style="color:red;">@Html.ValidationMessage("ms1")</span> <br />
+            姓名 = <input type="text" id="txtMS2" name="ms2" value="" /> <span style="color:red;">@Html.ValidationMessage("ms2")</span> <br />
+            國文 = <input type="text" id="txtMI1" name="mi1" value="" /> <span style="color:red;">@Html.ValidationMessage("mi1")</span> <br />
+            英文 = <input type="text" id="txtMI2" name="mi2" value="" /> <span style="color:red;">@Html.ValidationMessage("mi2")</span> <br />
+            <br />
+            <input type="submit" name="btnSubmit" value="新增" onclick="return confirm('確認新增嗎?');"  />
+            <input type="reset" name="reset" value="重填" />
+            <input type="submit" name="btnSubmit" value="取消" />
+        </form>
+        <br />
+    </div>
+    <hr />
+    <a href="http://www.luckstar.com.tw">LuckStar Computer Inc.</a> | 執行時間=@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")
+
+    @MvcHtmlString.Create(ViewBag.ErrorList)
+</body>
+</html>
+
